@@ -5,9 +5,19 @@ class CatsController < ApplicationController
       render json: cats
     end
 
+    #   def index
+    #   @cats = Cat.all
+    #   render json: @cats, include: "*"
+    # end
+    #
+    # def show
+    #   cat = Cat.find(params[:id])
+    #   render json: {cat: CatSerializer.new(cat)}, include: "*"
+    # end
+
     def create
-      @toy = Cat.create(toy_params)
-      if @toy.valid?
+      @cat = Cat.create(cat_params)
+      if @cat.valid?
         render json: @cat
       else
         render json: {errors: @cat.errors.full_messages}
@@ -31,7 +41,7 @@ class CatsController < ApplicationController
     private
 
     def cat_params
-      params.permit(:user_id, :name, :url, :likes)
+      params.require(:cat).permit(:name, :url, :likes, :user_id)
     end
 
 end

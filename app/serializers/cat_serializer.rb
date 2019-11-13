@@ -1,3 +1,3 @@
 class CatSerializer < ActiveModel::Serializer
-  attributes :name, :url, :likes
+  attributes :id, :name, :url, :likes, :user
 end
