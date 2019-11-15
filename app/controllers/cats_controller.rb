@@ -15,6 +15,11 @@ class CatsController < ApplicationController
     #   render json: {cat: CatSerializer.new(cat)}, include: "*"
     # end
 
+    # def uppercase
+    #    username=(value)
+    #    write_attribute(:username, value.upcase)
+    #  end
+
     def create
       @cat = Cat.create(cat_params)
       if @cat.valid?
@@ -27,6 +32,7 @@ class CatsController < ApplicationController
     def update
       @cat = Cat.find(params[:id])
       @cat.update(cat_params)
+
       render json: @cat
     end
 
