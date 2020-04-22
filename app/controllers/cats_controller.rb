@@ -5,20 +5,6 @@ class CatsController < ApplicationController
       render json: cats
     end
 
-    #   def index
-    #   @cats = Cat.all
-    #   render json: @cats, include: "*"
-    # end
-    #
-    # def show
-    #   cat = Cat.find(params[:id])
-    #   render json: {cat: CatSerializer.new(cat)}, include: "*"
-    # end
-
-    # def uppercase
-    #    username=(value)
-    #    write_attribute(:username, value.upcase)
-    #  end
 
     def create
       @cat = Cat.create(cat_params)
