@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'https://markdenardo.github.io/mod3_cat_app_frontend/'
+    origins '*'
 
     resource '*',
       headers: :any,
