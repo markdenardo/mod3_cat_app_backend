@@ -7,10 +7,9 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'https://markdenardo.github.io'
-    resource 'https://markdenardo.github.io'
-    Access-Control-Allow-Headers: origin, content-type
-    Access-Control-Allow-Methods: GET, POST, PUT, DELETE
+    origins '*'
+
+    resource '*',
       headers: :any,
       methods: [:get, :post, :put, :patch, :delete, :options, :head]
   end
