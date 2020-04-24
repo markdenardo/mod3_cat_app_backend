@@ -11,7 +11,7 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
     resource 'https://markdenardo.github.io'
     Access-Control-Allow-Headers: origin, content-type
     Access-Control-Allow-Methods: GET, POST, PUT, DELETE
-      # headers: :any,
-      # methods: [:get, :post, :put, :patch, :delete, :options, :head]
+      headers: :any,
+      methods: [:get, :post, :put, :patch, :delete, :options, :head]
   end
 end
